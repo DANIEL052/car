@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% extends 'my_app/home.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>edit car</title>
+</head>
+<body>
+
+
+{% block content %}
+<style>
+  label{
+    color: red;
+  }
+
+</style>
+
+   <form action="{% url 'edit_car' cid=cid %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+       {{ form.as_p }}
+    <input name="cid" type="hidden" value= {{cid}}/>
+    <input type="submit" value="send" >
+  </form>
+{% endblock content %}
+
+
+</body>
+</html>

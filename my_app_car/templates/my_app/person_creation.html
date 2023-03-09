@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% extends 'my_app/home.html' %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ {% block content %}
+ <style>
+  label{
+    color: red;
+  }
+
+</style>
+<form action="{% url 'person_creation' %}" method="post" name="person_creation">
+    {{form.as_p}}
+    <input type="submit"/>
+    {% endblock content %}
+</form>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% extends 'my_app/home.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Rent</title>
+</head>
+<body>
+{% block content %}
+ <style>
+  label{
+    color: red;
+  }
+
+</style>
+  <form  method="post" name="update_rent">
+      {{form.as_p}}
+      <input type="submit">
+  </form>
+{% endblock content %}
+
+</body>
+</html>

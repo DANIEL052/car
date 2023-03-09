@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% extends 'my_app/home.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+{% block content %}
+<style>
+  label{
+    color: red;
+  }
+  span {color: yellow;
+  }
+  form {text-align: center;
+  }
+</style>
+
+   <form action="{% url 'login'  %}" method="post">
+    {% csrf_token %}
+       {{ form.as_p }}
+    <input type="submit" value="send" >
+  </form>
+{% endblock content %}
+</body>
+</html>
